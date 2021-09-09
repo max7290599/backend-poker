@@ -75,6 +75,8 @@ $ git push heroku main
 
     None
 
+    </details>
+
 **Connect Game**
 ----
 
@@ -134,6 +136,8 @@ $ git push heroku main
 
     None
 
+    </details>
+
 
     **Socket.IO**
 ----
@@ -173,13 +177,15 @@ $ git push heroku main
     **Content:**
 
     ```json
-[
-  {
-    "firstName": "Maksim",
-    "image": "base64",
-    "jobPosition": "dev",
-    "role": "admin",
-    "secondName": "Atroschenko"
-  }
-]
+      [
+        {
+          "firstName": "Maksim",
+          "image": "base64",
+          "jobPosition": "dev",
+          "role": "admin",
+          "secondName": "Atroschenko"
+        }
+      ]
     ```
+
+</details>
