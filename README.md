@@ -11,8 +11,7 @@ Make some changes to the code you just cloned and deploy them to Heroku using Gi
 
 $ git add .
 $ git commit -am "make it better"
-$ git push heroku master
-
+$ git push heroku main
 
 **Create Game**
 ----
@@ -31,7 +30,7 @@ $ git push heroku master
 
     None
 
-*  **URL Params**
+* **URL Params**
 
     None
 
@@ -44,29 +43,30 @@ $ git push heroku master
  ```typescript
       {
         firstName: string,
-        lastName: string,
+        SecondName: string,
         jobPosition: string,
         image: string,
       }
-    ```
+ ```
 
 * **Success Response:**
 
   * **Code:** 200 OK <br />
-    **Content:** 
+    **Content:**
+
     ```json
       {
         "admin": {
         "firstName": "maxim",
         "image": "bas64",
         "jobPosition": "develop",
-        "lastName": "Atroschenko"
+        "SecondName": "Atroschenko"
         },
-        "roomId": "dgbji",
+        "roomId": "gamer",
         "users": {}
       }
     ```
- 
+
 * **Error Response:**
 
     None
@@ -75,4 +75,111 @@ $ git push heroku master
 
     None
 
+**Connect Game**
+----
 
+<details>
+
+* **URL**
+
+    /connectGame
+
+* **Method:**
+
+    `POST`
+
+* **Headers:**
+
+    None
+
+* **URL Params**
+
+    None
+
+* **Query Params**
+
+    None
+
+* **Data Params**
+
+ ```typescript
+      {
+        roomId: string
+      }
+ ```
+
+* **Success Response:**
+
+  * **Code:** 200 OK <br />
+    **Content:**
+
+    ```
+      {
+        "OK"
+      }
+    ```
+
+* **Error Response:**
+
+    * **Code:** 406 Not Acceptable <br />
+    **Content:**
+
+    ```
+      {
+        "This game does not exist"
+      }
+    ```
+
+* **Notes:**
+
+    None
+
+
+    **Socket.IO**
+----
+
+<details>
+
+* **URL**
+
+    'GAME:JOIN'
+
+* **Method:**
+
+    `emit`
+
+
+* **Send Params**
+
+ ```typescript
+      {
+        roomId: string,
+        firstName: string,
+        secondName: string, 
+        jobPosition: string, 
+        image: string,
+        role: string
+      }
+ ```
+
+* **Response:**
+
+    'GAME:SET_USERS'
+
+    * **Method:**
+
+    `on`
+
+    **Content:**
+
+    ```json
+[
+  {
+    "firstName": "Maksim",
+    "image": "base64",
+    "jobPosition": "dev",
+    "role": "admin",
+    "secondName": "Atroschenko"
+  }
+]
+    ```
