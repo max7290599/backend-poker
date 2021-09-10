@@ -1,4 +1,5 @@
-If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+# backend-poker
+Deploy Heroku http://fast-escarpment-66573.herokuapp.com/
 
 $ heroku login
 Clone the repository
@@ -12,6 +13,14 @@ Make some changes to the code you just cloned and deploy them to Heroku using Gi
 $ git add .
 $ git commit -am "make it better"
 $ git push heroku main
+
+## Setup and Running
+
+- Clone this repo: `$ git clone https://github.com/max7290599/backend-poker.git`.
+- Go to downloaded folder: `$ cd backend-poker`.
+- Install dependencies: `$ npm install`.
+- Start server: `$ npm run start`.
+- Now you can send requests to the address: `http://127.0.0.1:9999`.
 
 **Create Game**
 ----
